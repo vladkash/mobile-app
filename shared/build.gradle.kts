@@ -31,6 +31,8 @@ kotlin {
 
                 api(libs.kit.presentation.redux)
                 implementation(libs.kit.presentation.reduxCoroutines)
+
+                implementation("com.github.h0tk3y.betterParse:better-parse:0.4.3")
             }
         }
         val commonTest by getting {

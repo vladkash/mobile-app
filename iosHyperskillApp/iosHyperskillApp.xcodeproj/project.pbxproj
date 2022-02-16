@@ -13,20 +13,8 @@
 		2C2CB0B927A87F610060EC76 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CB0B827A87F610060EC76 /* CalculatorView.swift */; };
 		2C9277FE27888886005BF2C4 /* UserRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9277FD27888886005BF2C4 /* UserRow.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		E920725F27BD1977000798AC /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2502A5DD465DAA2F2ED368 /* shared.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7555FFB4242A642300829871 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +25,7 @@
 		7555FF7B242A565900829871 /* iosHyperskillApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosHyperskillApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE2502A5DD465DAA2F2ED368 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "/Users/vladkash/StudioProjects/mobile-app/shared/build/xcode-frameworks/Debug/iphonesimulator15.2/shared.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E920725F27BD1977000798AC /* shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +82,7 @@
 		7555FFB0242A642200829871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE2502A5DD465DAA2F2ED368 /* shared.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,7 +98,6 @@
 				7555FF77242A565900829871 /* Sources */,
 				7555FF78242A565900829871 /* Frameworks */,
 				7555FF79242A565900829871 /* Resources */,
-				7555FFB4242A642300829871 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,9 +310,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosHyperskillApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 677J5A86PF;
+				DEVELOPMENT_TEAM = 33ZJ787XV5;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"\"${PROJECT_DIR}/../shared/build/xcode-frameworks/Debug/iphonesimulator15.2\"/**",
+				);
 				INFOPLIST_FILE = iosHyperskillApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,11 +325,14 @@
 					"$(inherited)",
 					"-framework",
 					shared,
+					"-Xlinker",
+					"-interposable",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosHyperskillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -346,9 +342,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosHyperskillApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 677J5A86PF;
+				DEVELOPMENT_TEAM = 33ZJ787XV5;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"\"${PROJECT_DIR}/../shared/build/xcode-frameworks/Debug/iphonesimulator15.2\"/**",
+				);
 				INFOPLIST_FILE = iosHyperskillApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,11 +357,14 @@
 					"$(inherited)",
 					"-framework",
 					shared,
+					"-Xlinker",
+					"-interposable",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosHyperskillApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
